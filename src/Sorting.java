@@ -5,7 +5,7 @@ public class Sorting {
     public static void main(String[] args) {
 
         int[] arr = new int[]{447,221,43,586,412,334,435,430,42,28,23};
-        bubbleSort(arr);
+        selectionSort(arr);
         System.out.println(Arrays.toString(arr));
 
 
@@ -39,6 +39,19 @@ public class Sorting {
                     arr[i+1] = arr[i];
                     arr[i] = x;
                     unSorted = true;
+                }
+            }
+        }
+    }
+
+    static void selectionSort(int[] arr){
+        int temp = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[i]){
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
